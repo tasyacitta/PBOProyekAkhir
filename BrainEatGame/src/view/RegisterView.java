@@ -1,6 +1,6 @@
-
-package View;
-import view.*;
+package view;
+import controller.ControlGame;
+import controller.ControlMenu;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.event.ActionEvent;
@@ -19,7 +19,7 @@ public class RegisterView extends JFrame implements ActionListener {
     }
     private JTextField fieldnama, fieldpw,fieldconfirm;
     private JLabel labeljudul, labelnama, labelpw, labelconfirm;
-    private JButton btnbatal, btnregister;
+    private JButton btnbatal, btnregister, btnReset;
 
 public void formRegis() {
     setTitle("Registration");
@@ -34,7 +34,7 @@ public void formRegis() {
     labelconfirm = new JLabel("Confirm Password ");
     fieldconfirm = new JTextField(6);
     
-    
+    btnReset = new JButton(" Reset ");
     btnbatal = new JButton(" Batal ");
     btnregister = new JButton(" Register ");
     
@@ -46,6 +46,7 @@ public void formRegis() {
     add(fieldpw);
     add(labelconfirm);
     add(fieldconfirm);
+    add(btnReset);
     add(btnbatal);
     add(btnregister);
     
@@ -56,16 +57,22 @@ public void formRegis() {
     fieldpw.setBounds(150,70,90,20);
     labelconfirm.setBounds(10,90,120,20);
     fieldconfirm.setBounds(150,90,90,20);
-    btnbatal.setBounds(150,125,90,20);
+    
+    btnReset.setBounds(90,120,90,20);
+    btnReset.setBackground(Color.BLACK);
+    btnReset.setForeground(Color.white);
+    btnReset.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+    btnReset.addActionListener(this);
+    btnbatal.setBounds(150,150,90,20);
     btnbatal.setBackground(Color.red);
     btnbatal.setForeground(Color.white);
     btnbatal.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-    //btnlogin.addActionListener(this);
-    btnregister.setBounds(30,125,90,20);
+    btnbatal.addActionListener(this);
+    btnregister.setBounds(30,150,90,20);
     btnregister.setBackground(Color.blue);
     btnregister.setForeground(Color.white);
     btnregister.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-    //btnregister.addActionListener(this);
+    btnregister.addActionListener(this);
     
     setResizable(false);
     setLocation(450,200);
@@ -82,7 +89,7 @@ public void formRegis() {
                 setMessage("Username tidak boleh kosong");
                 }
             if(fieldpw.getText().equals("")){
-                setMessage("Massa barang harus diisi");
+                setMessage("Password harus diisi");
                 }
             if(fieldpw.getText().equals(fieldconfirm.getText())){              
                   String[] data = {
@@ -93,15 +100,25 @@ public void formRegis() {
 //                //fungsiinputkedatabase
                 }
             else{
-                 setMessage("Harap Konfimasi dengan Benar!");
+                 setMessage("Harap Isi Konfimasi Password dengan Benar!");
             }
         }
         
         if(e.getSource()==btnbatal) {
-           
+          dispose();
+            ControlMenu menu = new ControlMenu();
+            menu.openMenu();
             dispose();
         }
         
+        else if(e.getSource()==btnReset){
+            reset();
+        }
+    }
+    
+    public void reset(){
+        fieldnama.setText("");
+        fieldpw.setText("");
     }
 
     public void setMessage(String message) {
