@@ -1,10 +1,11 @@
 package controller;
 
-import view.MenuView;
+import view.*;
 
 
 public class ControlMenu {
         public void openMenu(){
-        new MenuView();
+        Loginview lv = new Loginview();
+        lv.formLogin();
 }
 }
