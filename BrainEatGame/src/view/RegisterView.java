@@ -1,4 +1,4 @@
-package view;
+package view; 
 import controller.ControlGame;
 import controller.ControlMenu;
 
