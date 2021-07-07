@@ -1,6 +1,7 @@
 package controller;
 
 import view.*;
+import model.*;
 
 public class ControlGame {
         
@@ -10,6 +11,7 @@ public class ControlGame {
     }
     
     public void login(){
+        
         Loginview lv = new Loginview();
         lv.formLogin();
     }
@@ -20,6 +22,11 @@ public class ControlGame {
     
     public void menuUser(){
         new MenuAdminView();
+    }
+    
+    public void inputRegis(String[] data){
+        ModelRegis mr=new ModelRegis();
+        mr.inputRegis(data);
     }
     
 }
