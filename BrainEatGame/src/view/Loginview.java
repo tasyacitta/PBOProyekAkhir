@@ -5,27 +5,22 @@
  */
 package View;
 
-import java.awt.Color;
-import java.awt.Cursor;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JTextField;
+import javax.swing.*;
 
 public class Loginview extends JFrame implements ActionListener {
     private JTextField fieldnama, fieldpw;
-    private JLabel labeljudul, labelnama, labelpw;
-    private JButton btnlogin, btnregister;
+    private JLabel lJudul, labelnama, labelpw;
+    private JButton bLogin, bRegister;
 
 public void formLogin() {
     setTitle("Login Session");
     setDefaultCloseOperation(EXIT_ON_CLOSE);
     setSize(220,225);
     
-    labeljudul = new JLabel(" LOGIN ");
+    lJudul = new JLabel(" LOGIN ");
     labelnama = new JLabel(" Userame ");
     fieldnama = new JTextField(18);
     labelpw = new JLabel(" Password ");
@@ -35,28 +30,28 @@ public void formLogin() {
     btnregister = new JButton(" Register ");
     
     setLayout(null);
-    add(labeljudul);
+    add(lJudul);
     add(labelnama);
     add(fieldnama);
     add(labelpw);
     add(fieldpw);
-    add(btnlogin);
-    add(btnregister);
+    add(bLogin);
+    add(bRegister);
     
     labeljudul.setBounds(85,10,120,20);
     labelnama.setBounds(10,45,120,20);
     fieldnama.setBounds(100,45,90,20);
     labelpw.setBounds(10,70,120,20);
     fieldpw.setBounds(100,70,90,20);
-    btnlogin.setBounds(12,125,90,20);
-    btnlogin.setBackground(Color.blue);
-    btnlogin.setForeground(Color.white);
-    btnlogin.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+    bLogin.setBounds(12,125,90,20);
+    bLogin.setBackground(Color.blue);
+    bLogin.setForeground(Color.white);
+    bLogin.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
     //btnlogin.addActionListener(this);
-    btnregister.setBounds(106,125,90,20);
-    btnregister.setBackground(Color.red);
-    btnregister.setForeground(Color.white);
-    btnregister.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+    bRegister.setBounds(106,125,90,20);
+    bRegister.setBackground(Color.red);
+    bRegister.setForeground(Color.white);
+    bRegister.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
     //btnregister.addActionListener(this);
     
     setResizable(false);
@@ -69,7 +64,7 @@ public void formLogin() {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource()==btnlogin) {
+        if(e.getSource()==bLogin) {
             if (fieldnama.getText().equals("")) {
                 setMessage("Username tidak boleh kosong");
                 }
