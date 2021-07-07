@@ -1,6 +1,7 @@
 package view;
 import controller.ControlGame;
 import controller.ControlMenu;
+
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.event.ActionEvent;
@@ -96,8 +97,9 @@ public void formRegis() {
                            fieldnama.getText(),
                            fieldpw.getText()
                     };
-                   //controller
-//                //fungsiinputkedatabase
+                    ControlGame cg = new ControlGame();
+                    cg.inputRegis(data);
+                    dispose();
                 }
             else{
                  setMessage("Harap Isi Konfimasi Password dengan Benar!");
