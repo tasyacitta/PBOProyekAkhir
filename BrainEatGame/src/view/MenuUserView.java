@@ -7,19 +7,19 @@ import java.awt.event.ActionListener;
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
 public class MenuView extends JFrame implements ActionListener{
-    private JLabel lJudul;
-    private JButton bSignUp, bLogin;
+    private JLabel lJudul, lmain, lhapus;
+    private JButton bMain, bHapus;
     
     public MenuView(){  
         setTitle("Menu");
         lJudul = new JLabel("Main Menu", SwingConstants.CENTER);
-        bSignUp = new JButton(" Sign Up ");
-        bLogin = new JButton(" Login ");
+        bMain = new JButton(" Main ");
+        bHapus = new JButton(" Hapus Akun ");
         
         setLayout(new GridLayout(4,4));
         add(lJudul);
-        add(bSignUp);
-        add(bLogin);
+        add(bMain);
+        add(bHapus);
         
         pack();
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
@@ -28,24 +28,24 @@ public class MenuView extends JFrame implements ActionListener{
         setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         
-        bSignUp.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        bLogin.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        bMain.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        bHapus.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         
-        bSignUp.addActionListener(this);  
-        bLogin.addActionListener(this);  
+        bMain.addActionListener(this);  
+        bHapus.addActionListener(this);  
         
     }
     
     public void actionPerformed(ActionEvent e)
         {
-            if(e.getSource() == bSignUp)
+            if(e.getSource() == bMain)
             {
                 
                 dispose();
             }
             
             
-            if(e.getSource() == bLogin)
+            if(e.getSource() == bHapus)
             {
                 
                 dispose();
