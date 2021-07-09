@@ -1,4 +1,3 @@
-
 package view;
 
 import controller.ControlGame;
@@ -48,7 +47,7 @@ public class DetailDataView extends JFrame implements ActionListener {
         labelskor.setBounds(10, 70, 120, 20);
         isskor.setBounds(130, 70, 190, 20);
         
-        bHapus.setBounds(20, 150, 90, 20);
+        bHapus.setBounds(140, 150, 90, 20);
         bHapus.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         bHapus.addActionListener(this);
         bHapus.setBackground(Color.red);
