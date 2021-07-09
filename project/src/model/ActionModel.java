@@ -1,19 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model;
-
 
 import java.sql.*;
 import javax.swing.*;
-import project.Connector;
+import database.Connector;
 import controller.ControlGame;
-import static javax.management.Query.value;
-import static javax.management.Query.value;
+import game.Game;
 
-
+/**
+ *
+ * @author ASUS
+ */
 public class ActionModel {
     private Connection connection;
     private Statement statement;
@@ -108,9 +104,9 @@ public class ActionModel {
 
     public String[] lihatData(String nama) {
                 try{
-            String[] data = new String[4];
+            String[] data = new String[9];
             statement = connection.createStatement();
-            String query = "select * from pemain where nama =  '" + nama + "'";
+            String query = "select * from pemain";
             ResultSet resultSet = statement.executeQuery(query);
             while (resultSet.next()){
                 data[0] = resultSet.getString("tanggal");
@@ -125,7 +121,7 @@ public class ActionModel {
         }
     }
     
-     public int numRows(String table){
+    public int numRows(String pemain){
         int jmlData = 0;
         try{
             statement = connection.createStatement();
@@ -141,4 +137,6 @@ public class ActionModel {
             return 0;
         }
     }
+    
+    
 }
