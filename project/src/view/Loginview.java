@@ -84,7 +84,7 @@ public void formLogin() {
                            fieldnama.getText(),
                            fieldpw.getText()
                     };
-                  if(fieldnama.getText().equals("admin")){
+                  if(fieldnama.getText().toLowerCase().contains("admin".toLowerCase())){
                    ControlGame cg = new ControlGame();
                    cg.menuAdmin(data);
                    dispose();
